@@ -1,0 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class triggerfairyenter : MonoBehaviour
+{
+    //refs spawnpoint of prefab
+    public Transform Spawnpoint;
+    //prefab 
+    public GameObject Fairy;
+    //Upon collision with invis wall, Player will trigger FairyEnter
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.tag == "Player") {
+            Instantiate(Fairy, Spawnpoint.position, Spawnpoint.rotation);
+        }
+    }
+}
